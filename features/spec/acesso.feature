@@ -10,12 +10,14 @@ Scenario: Nova Sessão
     When eu entro no Gitnder
     Then devo ver a area logada
 
-Scenario: Conta nao existe no GitHub
-    Given que eu possuo a conta "ph-gonzaga404"
+Scenario Outline: Tentar logar
+    Given que eu possuo a conta <github>
     When eu entro no Gitnder
     Then devo ver a mensagem de alerta: "Conta Github não existe :("
 
-Scenario: Conta nao informada
-    Given que eu possuo a conta ""
-    When eu entro no Gitnder
-    Then devo ver a mensagem de alerta: "Conta Github não existe :("
+    Examples:
+    |github|
+    |"ph-gonzaga404"|
+    |""|
+
+
