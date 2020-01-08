@@ -9,12 +9,12 @@ end
 When("eu entro no Gitnder") do
  visit "https://gitnder.herokuapp.com/"
  find("#gituser").set @conta
- find("input[placeholder=Seus skills separados por virgula]").set @skills
+ find("input[placeholder*=skills]").set @skills
  click_button "Enviar"
 end
 
 Then("devo ver a area logada") do
-  usuario_logado =  page.has_css?(".gitusers")
+  usuario_logado = page.has_css?(".gitusers")
   expect(usuario_logado).to be true
 end
 
