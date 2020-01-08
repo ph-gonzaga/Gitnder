@@ -16,6 +16,6 @@ Scenario: Conta nao existe no GitHub
     Then devo ver a mensagem de alerta: "Conta Github não existe :("
 
 Scenario: Conta nao informada
-    Given que "" é uma conta do Github
+    Given que eu possuo a conta ""
     When eu entro no Gitnder
     Then devo ver a mensagem de alerta: "Conta Github não existe :("
