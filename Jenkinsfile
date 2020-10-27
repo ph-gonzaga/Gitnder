@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
         image "papitoio/rubywd"
+        args "--network=skynet -u root --privileged"
     }
   }
   stages {
