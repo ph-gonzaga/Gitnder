@@ -1,21 +1,18 @@
 pipeline {
   agent {
     docker {
-        image "ruby:alpine"
-        args "--network=skynet -u root --privileged"
+        image "ruby"
     }
   }
   stages {
     stage("Build") {
       steps {
-        sh "chmod +x build/alpine.sh"
-        sh "./build/alpine.sh"
         sh "bundle install"
       }
     }
     stage("Test") {
       steps {
-        sh "bundle exec cucumber -p ci"
+        sh "bundle exec cucumber"
       }
       post {
         always {
