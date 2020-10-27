@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-        images 'papitoio/rubywd'
+        image 'papitoio/rubywd'
     }
   }
   stages {
